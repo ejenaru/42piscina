@@ -1,5 +1,36 @@
-    Name                    Cache name                                 Expires
-* idiaz-fo@42MADRID.COM   API:16CB9EC9-DD07-4659-9500-CBDA35E1FDA6   Feb 23 01:03:35 2021
-  idiaz-fo@42MADRID.COM   API:6D1745D5-1E19-4251-9335-46E6B79E9632   Feb 23 00:10:05 2021
-  idiaz-fo@42MADRID.COM   API:AE020570-319B-4C34-80AF-50D6B9A6B95E   Feb 22 22:42:03 2021
-  idiaz-fo@42MADRID.COM   API:5355                                   Feb 22 20:05:37 2021
+Credentials cache: API:E782F494-9104-41C3-B250-49AAECB98DD4
+        Principal: idiaz-fo@42MADRID.COM
+
+  Issued                Expires               Principal
+Feb 23 18:39:47 2021  Feb 24 04:39:47 2021  krbtgt/42MADRID.COM@42MADRID.COM
+
+
+Credentials cache: API:D38293CD-1EB5-4FEF-B56C-D8788393EC87
+        Principal: idiaz-fo@42MADRID.COM
+
+  Issued                Expires               Principal
+Feb 23 18:28:00 2021  Feb 24 04:27:53 2021  krbtgt/42MADRID.COM@42MADRID.COM
+
+
+Credentials cache: API:3840AD18-22B9-4E9F-8D29-9A92AD56ED66
+        Principal: idiaz-fo@42MADRID.COM
+
+  Issued                Expires               Principal
+Feb 23 16:19:37 2021  Feb 24 02:19:37 2021  krbtgt/42MADRID.COM@42MADRID.COM
+
+
+Credentials cache: API:D08B4AA7-8E70-4602-B944-D33EDA159B7E
+        Principal: idiaz-fo@42MADRID.COM
+
+  Issued                Expires               Principal
+Feb 23 15:36:08 2021  Feb 24 01:36:08 2021  krbtgt/42MADRID.COM@42MADRID.COM
+
+
+Credentials cache: API:5355
+        Principal: idiaz-fo@42MADRID.COM
+
+  Issued                Expires               Principal
+Feb 23 14:53:58 2021  Feb 24 00:53:58 2021  krbtgt/42MADRID.COM@42MADRID.COM
+Feb 23 14:53:59 2021  Feb 24 00:53:58 2021  HTTP/student-storage.42madrid.com@42MADRID.COM
+
+
