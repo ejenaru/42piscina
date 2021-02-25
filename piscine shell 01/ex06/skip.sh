@@ -1,9 +1,4 @@
 #!/bin/sh
 
-while true; do
-
-	ls -l
-
-	echo ""
-
-done
+#ls -l | sed -n "n;p"
+ls -l | awk 'NR % 2 == 1' 
