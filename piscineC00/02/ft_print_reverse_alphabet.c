@@ -1,41 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_comb.c                                    :+:      :+:    :+:   */
+/*   ft_print_reverse_alphabet.c                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: idiaz-fo <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: idiaz-fo <idiaz-fo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/25 21:10:45 by idiaz-fo          #+#    #+#             */
-/*   Updated: 2021/02/25 21:41:10 by idiaz-fo         ###   ########.fr       */
+/*   Created: 2021/02/25 19:03:23 by idiaz-fo          #+#    #+#             */
+/*   Updated: 2021/02/25 19:47:11 by idiaz-fo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void	ft_print_comb(void)
+void	ft_print_reverse_alphabet(void)
 {
-	char n[3];
+	char c;
 
-	n[0] = '0';
-
-	while (n[0] <= '9')
+	c = 'z';
+	while (c >= 'a')
 	{
-		n[1] = n[0];
-		while (n[1] <= '9')
-		{
-			n[2] = n[1];
-			while (n[2] <= '9')
-			{
-				write(1, &n, 3);
-				n[2]++;
-			}
-			n[1]++;
-		}
-		n[0]++;
+		write(1, &c, 1);
+		c--;
 	}
-}
-
-int main(void)
-{
-	ft_print_comb();
 }
