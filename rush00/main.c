@@ -6,7 +6,7 @@
 /*   By: idiaz-fo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/27 14:02:30 by idiaz-fo          #+#    #+#             */
-/*   Updated: 2021/02/27 20:00:35 by idiaz-fo         ###   ########.fr       */
+/*   Updated: 2021/02/27 21:04:58 by idiaz-fo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,6 @@ int		rush(unsigned int col, unsigned int fil);
 
 int		main(void)
 {
-	rush(1, 5);
+	rush(8, 8);
 	return (0);
 }
