@@ -6,7 +6,7 @@
 /*   By: idiaz-fo <idiaz-fo@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/27 14:02:30 by idiaz-fo          #+#    #+#             */
-/*   Updated: 2021/02/28 11:05:46 by idiaz-fo         ###   ########.fr       */
+/*   Updated: 2021/02/28 16:45:30 by idiaz-fo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,19 +43,19 @@ char	whichletter(int i, int j, int maxi, int maxj)
 	}
 }
 
-void	rush(int col, int fil)
+void	rush(int x, int y)
 {
 	int		i;
 	int		j;
 	char	letter;
 
 	i = 0;
-	while (i < fil)
+	while (i < y)
 	{
 		j = 0;
-		while (j < col)
+		while (j < x)
 		{
-			letter = whichletter(i, j, fil, col);
+			letter = whichletter(i, j, y, x);
 			ft_putchar(letter);
 			j++;
 		}

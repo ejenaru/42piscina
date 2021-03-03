@@ -1,23 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_div_mod.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: idiaz-fo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/02 12:09:25 by idiaz-fo          #+#    #+#             */
-/*   Updated: 2021/03/02 19:49:08 by idiaz-fo         ###   ########.fr       */
+/*   Created: 2021/03/02 21:38:01 by idiaz-fo          #+#    #+#             */
+/*   Updated: 2021/03/02 21:41:04 by idiaz-fo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-
-void ft_putchar(char c);
-
-int		main(int argc, char *argv[])
+void	ft_div_mod(int a, int b, int *div, int *mod)
 {
-	ft_putchar(12);
-	ft_putchar(0);
-
+	*div = a / b;
+	*mod = a % b;
 }
-
