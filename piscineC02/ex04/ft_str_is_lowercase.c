@@ -1,21 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_is_negative.c                                   :+:      :+:    :+:   */
+/*   ft_str_is_lowercase.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: idiaz-fo <idiaz-fo@student.42.fr>          +#+  +:+       +#+        */
+/*   By: idiaz-fo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/25 20:01:32 by idiaz-fo          #+#    #+#             */
-/*   Updated: 2021/03/02 16:11:45 by idiaz-fo         ###   ########.fr       */
+/*   Created: 2021/03/04 13:35:16 by idiaz-fo          #+#    #+#             */
+/*   Updated: 2021/03/04 13:38:21 by idiaz-fo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-
-void	ft_is_negative(int n)
+int		ft_str_is_lowercase(char *str)
 {
-	char c;
+	int i;
 
-	c = n >= 0 ? 'P' : 'N';
-	write(1, &c, 1);
+	i = 0;
+	if (str[0] == '\0')
+		return (1);
+	while (str[i] != '\0')
+	{
+		if (str[i] < 97 || str[i] > 122)
+			return (0);
+		i++;
+	}
+	return (1);
 }

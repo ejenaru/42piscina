@@ -6,7 +6,7 @@
 /*   By: idiaz-fo <idiaz-fo@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/26 14:11:16 by idiaz-fo          #+#    #+#             */
-/*   Updated: 2021/03/01 13:07:28 by idiaz-fo         ###   ########.fr       */
+/*   Updated: 2021/03/04 10:27:39 by idiaz-fo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,9 +52,4 @@ void	ft_print_comb2(void)
 		}
 		iter[0]++;
 	}
-}
-
-int		main(void)
-{
-	ft_print_comb2();
 }

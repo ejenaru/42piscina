@@ -10,6 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+/* Este código esta hecho para poder corregir los ejercicios :DD
+ Si encontrais algun fallo, podeis decirmelo y lo corrijo*/
+
 #include <stdio.h>
 
 void	ft_ft(int *nbr);

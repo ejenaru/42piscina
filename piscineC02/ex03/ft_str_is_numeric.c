@@ -1,23 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_str_is_numeric.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: idiaz-fo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/02 12:09:25 by idiaz-fo          #+#    #+#             */
-/*   Updated: 2021/03/02 19:49:08 by idiaz-fo         ###   ########.fr       */
+/*   Created: 2021/03/04 13:23:56 by idiaz-fo          #+#    #+#             */
+/*   Updated: 2021/03/04 13:34:24 by idiaz-fo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-
-void ft_putchar(char c);
-
-int		main(int argc, char *argv[])
+int ft_str_is_numeric(char *str)
 {
-	ft_putchar(12);
-	ft_putchar(0);
+	int i;
 
+	i = 0;
+	if (str[0] == '\0')
+		return (1);
+	while (str[i] != '\0')
+	{
+		if (str[i] < 48 || str[i] > 57)
+			return (0);
+		i++;
+	}
+	return (1);
 }
-
