@@ -6,23 +6,24 @@
 /*   By: idiaz-fo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/04 08:26:59 by idiaz-fo          #+#    #+#             */
-/*   Updated: 2021/03/05 13:43:34 by idiaz-fo         ###   ########.fr       */
+/*   Updated: 2021/03/06 21:34:04 by idiaz-fo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
 #include <stdio.h>
 
-void	*ft_strcpy(char *dest, char *src);
-char	*ft_strncpy(char *dest, char *src, unsigned int n);
-int		ft_str_is_alpha(char *str);
-int		ft_str_is_numeric(char *str);
-int		ft_str_is_lowercase(char *str);
-int		ft_str_is_uppercase(char *str);
-int		ft_str_is_printable(char *str);
-char	*ft_strupcase(char *str);
-char	*ft_strlowcase(char *str);
-char	*ft_strcapitalize(char *str);
+void			*ft_strcpy(char *dest, char *src);
+char			*ft_strncpy(char *dest, char *src, unsigned int n);
+int				ft_str_is_alpha(char *str);
+int				ft_str_is_numeric(char *str);
+int				ft_str_is_lowercase(char *str);
+int				ft_str_is_uppercase(char *str);
+int				ft_str_is_printable(char *str);
+char			*ft_strupcase(char *str);
+char			*ft_strlowcase(char *str);
+char			*ft_strcapitalize(char *str);
+unsigned int	ft_strlcpy(char *dest, char *src, unsigned int size);
 
 void	ejercicio00(void)
 {
@@ -162,6 +163,18 @@ void	ejercicio09(void)
 	printf("Resultado:	'%s'\n", ft_strcapitalize(tabempty)); 
 }
 
+void	ejercicio10(void)
+{
+	char src[] = "ESTA CADENA VA PRIMERO";
+	char dest[7];
+
+	printf("La cadena 1 es:: '%s'\n", src); 
+	printf("La cadena 2 es:: '%s'\n", dest);
+	printf("SIZE DEST::  %d\n", ft_strlcpy(dest, src, sizeof(dest)/sizeof(char))); 
+	printf("La cadena 2 es:: '%s'\n", dest);
+	printf("%lu, %lu\n", sizeof(dest), sizeof(dest)/sizeof(char));
+}
+
 int		main(void)
 {
 	printf("\nBIENVENIDO A LA IRENETTE\n"
@@ -189,7 +202,7 @@ int		main(void)
 	printf("\n-------EJERCICIO 09: ft_strcapitalize\n");
 	ejercicio09();
 	printf("\n-------EJERCICIO 10: ft_strlcpy\n");
-	//ejercicio10();
+	ejercicio10();
 	printf("\n-------EJERCICIO 11: ft_putstr_non_printable\n");
 	//ejercicio11();
 	printf("\n-------EJERCICIO 12: ft_print_memory\n");
