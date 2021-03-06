@@ -6,7 +6,7 @@
 /*   By: idiaz-fo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/04 11:36:22 by idiaz-fo          #+#    #+#             */
-/*   Updated: 2021/03/04 13:23:06 by idiaz-fo         ###   ########.fr       */
+/*   Updated: 2021/03/05 11:44:12 by idiaz-fo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,11 @@ int		ft_str_is_alpha(char *str)
 	int i;
 
 	i = 0;
-	if (*str == '\0')
+	if (str[0] == '\0')
 		return (1);
-	while (str[i]  != '\0')
+	while (str[i] != '\0')
 	{
-		if(str[i] < 65 || str[i] > 122)
+		if ((str[i] < 65 || str[i] > 90) && (str[i] < 97 || str[i] > 122))
 		{
 			return (0);
 		}

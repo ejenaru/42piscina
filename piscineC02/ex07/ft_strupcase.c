@@ -1,27 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_str_is_lowercase.c                              :+:      :+:    :+:   */
+/*   ft_strupcase.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: idiaz-fo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/04 13:35:16 by idiaz-fo          #+#    #+#             */
-/*   Updated: 2021/03/05 08:25:31 by idiaz-fo         ###   ########.fr       */
+/*   Created: 2021/03/05 10:07:48 by idiaz-fo          #+#    #+#             */
+/*   Updated: 2021/03/05 11:45:36 by idiaz-fo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_str_is_lowercase(char *str)
+char	*ft_strupcase(char *str)
 {
 	int i;
 
 	i = 0;
-	if (str[0] == '\0')
-		return (1);
 	while (str[i] != '\0')
 	{
-		if (str[i] < 97 || str[i] > 122)
-			return (0);
+		if (str[i] >= 97 && str[i] <= 122)
+			str[i] -= 32;
 		i++;
 	}
-	return (1);
+	return (str);
 }

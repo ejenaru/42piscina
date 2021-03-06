@@ -6,11 +6,11 @@
 /*   By: idiaz-fo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/04 13:23:56 by idiaz-fo          #+#    #+#             */
-/*   Updated: 2021/03/04 13:34:24 by idiaz-fo         ###   ########.fr       */
+/*   Updated: 2021/03/05 11:44:35 by idiaz-fo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_str_is_numeric(char *str)
+int		ft_str_is_numeric(char *str)
 {
 	int i;
 

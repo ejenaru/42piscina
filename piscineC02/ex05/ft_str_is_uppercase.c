@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_str_is_lowercase.c                              :+:      :+:    :+:   */
+/*   ft_str_is_uppercase.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: idiaz-fo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/04 13:35:16 by idiaz-fo          #+#    #+#             */
-/*   Updated: 2021/03/05 08:25:31 by idiaz-fo         ###   ########.fr       */
+/*   Created: 2021/03/05 08:25:59 by idiaz-fo          #+#    #+#             */
+/*   Updated: 2021/03/05 11:45:05 by idiaz-fo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_str_is_lowercase(char *str)
+int		ft_str_is_uppercase(char *str)
 {
 	int i;
 
@@ -19,7 +19,7 @@ int		ft_str_is_lowercase(char *str)
 		return (1);
 	while (str[i] != '\0')
 	{
-		if (str[i] < 97 || str[i] > 122)
+		if (str[i] < 65 || str[i] > 90)
 			return (0);
 		i++;
 	}

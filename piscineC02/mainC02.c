@@ -6,7 +6,7 @@
 /*   By: idiaz-fo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/04 08:26:59 by idiaz-fo          #+#    #+#             */
-/*   Updated: 2021/03/04 13:32:43 by idiaz-fo         ###   ########.fr       */
+/*   Updated: 2021/03/05 13:43:34 by idiaz-fo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,12 @@ void	*ft_strcpy(char *dest, char *src);
 char	*ft_strncpy(char *dest, char *src, unsigned int n);
 int		ft_str_is_alpha(char *str);
 int		ft_str_is_numeric(char *str);
+int		ft_str_is_lowercase(char *str);
+int		ft_str_is_uppercase(char *str);
+int		ft_str_is_printable(char *str);
+char	*ft_strupcase(char *str);
+char	*ft_strlowcase(char *str);
+char	*ft_strcapitalize(char *str);
 
 void	ejercicio00(void)
 {
@@ -46,9 +52,9 @@ void	ejercicio01(void)
 
 void	ejercicio02(void)
 {
-	char tabsi[] = "LaTararasilatararano";
-	char tabno[] = "La Tarara, niña, que la he visto yo";
-	char tabempty[0];
+	char tabsi[] = "qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM";
+	char tabno[] = "qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM[";
+	char tabempty[] = "";
 
 	printf("La cadena 1 es:: '%s'\n", tabno);
 	printf("Resultado:	%d\n", ft_str_is_alpha(tabno)); 
@@ -60,9 +66,9 @@ void	ejercicio02(void)
 
 void	ejercicio03(void)
 {
-	char tabno[] = "Luce mi Tarara su cola de seda";
-	char tabsi[] = "123546453645254551";
-	char tabempty[0];
+	char tabno[] = "0123456789:";
+	char tabsi[] = "0123456789";
+	char tabempty[] = "";
 
 	printf("La cadena 1 es:: '%s'\n", tabno);
 	printf("Resultado:	%d\n", ft_str_is_numeric(tabno)); 
@@ -70,6 +76,90 @@ void	ejercicio03(void)
 	printf("Resultado:	%d\n", ft_str_is_numeric(tabsi)); 
 	printf("La cadena 3 es:: '%s'\n", tabempty);
 	printf("Resultado:	%d\n", ft_str_is_numeric(tabempty)); 
+}
+
+void	ejercicio04(void)
+{
+	char tabno[] = "qwertyuiopasdfghjklzxcvbnmA";
+	char tabsi[] = "qwertyuiopasdfghjklzxcvbnm";
+	char tabempty[] = "";
+
+	printf("La cadena 1 es:: '%s'\n", tabno);
+	printf("Resultado:	%d\n", ft_str_is_lowercase(tabno)); 
+	printf("La cadena 2 es:: '%s'\n", tabsi);
+	printf("Resultado:	%d\n", ft_str_is_lowercase(tabsi)); 
+	printf("La cadena 3 es:: '%s'\n", tabempty);
+	printf("Resultado:	%d\n", ft_str_is_lowercase(tabempty)); 
+}
+
+void	ejercicio05(void)
+{
+	char tabno[] = "QWERTYUIOPASDFGHJKLZXCVBNMÑ";
+	char tabsi[] = "QWERTYUIOPASDFGHJKLZXCVBNM";
+	char tabempty[0] = "";
+
+	printf("La cadena 1 es:: '%s'\n", tabno);
+	printf("Resultado:	%d\n", ft_str_is_uppercase(tabno)); 
+	printf("La cadena 2 es:: '%s'\n", tabsi);
+	printf("Resultado:	%d\n", ft_str_is_uppercase(tabsi)); 
+	printf("La cadena 3 es:: '%s'\n", tabempty);
+	printf("Resultado:	%d\n", ft_str_is_uppercase(tabempty)); 
+}
+
+void	ejercicio06(void)
+{
+	char tabno[] = { 2, 3, 30, 0};
+	char tabsi[] = "12354645dafsgdfhjhgfd!-;:1";
+	char tabempty[] = "";
+
+	printf("La cadena 1 (non printable) es:: '%s'\n", tabno);
+	printf("Resultado:	%d\n", ft_str_is_printable(tabno)); 
+	printf("La cadena 2 (printable) es:: '%s'\n", tabsi);
+	printf("Resultado:	%d\n", ft_str_is_printable(tabsi)); 
+	printf("La cadena 3 (vacía) es:: '%s'\n", tabempty);
+	printf("Resultado:	%d\n", ft_str_is_printable(tabempty)); 
+}
+
+void	ejercicio07(void)
+{
+	char tabno[] = "ABCabcDEFdef";
+	char tabsi[] = "12345¿?ABCDE abcde  xyzXYZ";
+	char tabempty[] = "";
+
+	printf("La cadena 1 es:: '%s'\n", tabno);
+	printf("Resultado:	'%s'\n", ft_strupcase(tabno)); 
+	printf("La cadena 2 es:: '%s'\n", tabsi);
+	printf("Resultado:	'%s'\n", ft_strupcase(tabsi)); 
+	printf("La cadena 3 es:: '%s'\n", tabempty);
+	printf("Resultado:	'%s'\n", ft_strupcase(tabempty)); 
+}
+
+void	ejercicio08(void)
+{
+	char tabno[] = "ABCabcDEFdef";
+	char tabsi[] = "12345¿?ABCDE abcde  xyzXYZ";
+	char tabempty[] = "";
+
+	printf("La cadena 1 es:: '%s'\n", tabno);
+	printf("Resultado:	'%s'\n", ft_strlowcase(tabno)); 
+	printf("La cadena 2 es:: '%s'\n", tabsi);
+	printf("Resultado:	'%s'\n", ft_strlowcase(tabsi)); 
+	printf("La cadena 3 es:: '%s'\n", tabempty);
+	printf("Resultado:	'%s'\n", ft_strlowcase(tabempty)); 
+}
+
+void	ejercicio09(void)
+{
+	char tabno[] = "salut, comment tu vas ? 42mots quarante-deux; cinquante+et+un";
+	char tabsi[] = "1df hola ABCC Ef-ad ropa -o-0:el cafe+es+bueno, y esta rico ? ";
+	char tabempty[] = "";
+
+	printf("La cadena 1 es:: '%s'\n", tabno);
+	printf("Resultado:	'%s'\n", ft_strcapitalize(tabno)); 
+	printf("La cadena 2 es:: '%s'\n", tabsi);
+	printf("Resultado:	'%s'\n", ft_strcapitalize(tabsi)); 
+	printf("La cadena 3 es:: '%s'\n", tabempty);
+	printf("Resultado:	'%s'\n", ft_strcapitalize(tabempty)); 
 }
 
 int		main(void)
@@ -87,17 +177,17 @@ int		main(void)
 	printf("\n-------EJERCICIO 03: ft_str_is_numeric\n");
 	ejercicio03();
 	printf("\n-------EJERCICIO 04: ft_str_is_lowercase\n");
-	//ejercicio04();
+	ejercicio04();
 	printf("\n-------EJERCICIO 05: ft_str_is_uppercase\n");
-	//ejercicio05();
+	ejercicio05();
 	printf("\n-------EJERCICIO 06: ft_str_is_printable\n");
-	//ejercicio06();
+	ejercicio06();
 	printf("\n-------EJERCICIO 07: ft_strupcase\n");
-	//ejercicio07();
+	ejercicio07();
 	printf("\n-------EJERCICIO 08: ft_strlowercase\n");
-	//ejercicio08();
+	ejercicio08();
 	printf("\n-------EJERCICIO 09: ft_strcapitalize\n");
-	//ejercicio09();
+	ejercicio09();
 	printf("\n-------EJERCICIO 10: ft_strlcpy\n");
 	//ejercicio10();
 	printf("\n-------EJERCICIO 11: ft_putstr_non_printable\n");
