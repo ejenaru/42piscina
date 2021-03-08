@@ -6,12 +6,13 @@
 /*   By: idiaz-fo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/04 08:26:59 by idiaz-fo          #+#    #+#             */
-/*   Updated: 2021/03/06 21:34:04 by idiaz-fo         ###   ########.fr       */
+/*   Updated: 2021/03/08 16:36:25 by idiaz-fo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
 #include <stdio.h>
+#include <unistd.h>
 
 void			*ft_strcpy(char *dest, char *src);
 char			*ft_strncpy(char *dest, char *src, unsigned int n);
@@ -24,6 +25,8 @@ char			*ft_strupcase(char *str);
 char			*ft_strlowcase(char *str);
 char			*ft_strcapitalize(char *str);
 unsigned int	ft_strlcpy(char *dest, char *src, unsigned int size);
+void			ft_putstr_non_printable(char *str);
+void			*ft_print_memory(void *addr, unsigned int size);
 
 void	ejercicio00(void)
 {
@@ -165,15 +168,34 @@ void	ejercicio09(void)
 
 void	ejercicio10(void)
 {
-	char src[] = "ESTA CADENA VA PRIMERO";
-	char dest[7];
+	char src[] = "ESTA CADENA TIENE 25 CHAR";
+	char dest[1];
 
 	printf("La cadena 1 es:: '%s'\n", src); 
 	printf("La cadena 2 es:: '%s'\n", dest);
-	printf("SIZE DEST::  %d\n", ft_strlcpy(dest, src, sizeof(dest)/sizeof(char))); 
+	printf("SIZE SOURCE::  %d\n", ft_strlcpy(dest, src, sizeof(dest)/sizeof(char))); 
 	printf("La cadena 2 es:: '%s'\n", dest);
-	printf("%lu, %lu\n", sizeof(dest), sizeof(dest)/sizeof(char));
+	printf("La cadena 1 es:: '%s'\n",src);
+	printf("\ndest: %lu, source: %lu\n", sizeof(dest), sizeof(src)/sizeof(char));
 }
+
+void	ejercicio11(void)
+{
+	char src[] = "ESTA CAD'\n'ENA TI'\x1E' '\x1F'NE '\x17' '\x0F' 25 CHAR";
+
+	printf("La cadena 1 es:: '%s'\n", src); 
+	ft_putstr_non_printable(src);
+	printf("\n");
+}
+
+void	ejercicio12(void)
+{
+	char *src;
+
+	src = "Hola mis amigos, vamos a ver las bases de la programacion";
+	ft_print_memory(src, 8);
+}
+
 
 int		main(void)
 {
@@ -204,8 +226,9 @@ int		main(void)
 	printf("\n-------EJERCICIO 10: ft_strlcpy\n");
 	ejercicio10();
 	printf("\n-------EJERCICIO 11: ft_putstr_non_printable\n");
-	//ejercicio11();
+	ejercicio11();
 	printf("\n-------EJERCICIO 12: ft_print_memory\n");
-	//ejercicio12();
+	ejercicio12();
 	printf("\nFin de la corrección\n");
+	return 0;
 }

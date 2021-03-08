@@ -6,19 +6,19 @@
 /*   By: idiaz-fo <idiaz-fo@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/26 14:11:16 by idiaz-fo          #+#    #+#             */
-/*   Updated: 2021/03/04 10:27:39 by idiaz-fo         ###   ########.fr       */
+/*   Updated: 2021/03/08 09:30:07 by idiaz-fo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void	print_number(int num)
+void	print__number(int num)
 {
 	char digit;
 
 	if (num > 0)
 	{
-		print_number(num / 10);
+		print__number(num / 10);
 	}
 	if (num != 0)
 	{
