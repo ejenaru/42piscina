@@ -6,7 +6,7 @@
 /*   By: idiaz-fo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/04 08:26:59 by idiaz-fo          #+#    #+#             */
-/*   Updated: 2021/03/08 16:36:25 by idiaz-fo         ###   ########.fr       */
+/*   Updated: 2021/03/08 19:48:09 by idiaz-fo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ char			*ft_strcapitalize(char *str);
 unsigned int	ft_strlcpy(char *dest, char *src, unsigned int size);
 void			ft_putstr_non_printable(char *str);
 void			*ft_print_memory(void *addr, unsigned int size);
+void print_hex(long num);
 
 void	ejercicio00(void)
 {
@@ -190,9 +191,12 @@ void	ejercicio11(void)
 
 void	ejercicio12(void)
 {
-	char *src;
+	char src[10];
+	print_hex(src);
+	/*char *str = "Salut les aminches c'est cool show mem on fait de truc terrible\1\2";
+	ft_print_memory(str, fstrlen(str));
+	ft_print_memory(str, 0);*/
 
-	src = "Hola mis amigos, vamos a ver las bases de la programacion";
 	ft_print_memory(src, 8);
 }
 

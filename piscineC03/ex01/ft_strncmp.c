@@ -1,39 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_memory.c                                  :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: idiaz-fo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/08 15:15:11 by idiaz-fo          #+#    #+#             */
-/*   Updated: 2021/03/08 19:48:01 by idiaz-fo         ###   ########.fr       */
+/*   Created: 2021/03/08 21:11:47 by idiaz-fo          #+#    #+#             */
+/*   Updated: 2021/03/08 21:20:26 by idiaz-fo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-
-void	print_hex(long num)
+int ft_strncmp(char *s1, char *s2, unsigned int n)
 {
-	char digit;
-	char *base;
+	unsigned int i;
 
-	base = "0123456789abcdef";
-
-	if ((num / 16) == 0)
+	i = 0;
+	while (i < n)
 	{
-		digit = base[num];
-		write(1, &digit, 1);
+		if (s1[i] == 0 || s2[i] == 0)
+			return (s1[i] - s2[i]);
+		if (s1[i] != s2[i])
+			return (s1[i] - s2[i]);
+		i++;
 	}
-	else 
-	{
-		print_hex(num / 16);
-		digit = base[num % 16];
-		write(1, &digit, 1);
-	}
-}
-
-void	*ft_print_memory(void *addr, unsigned int size)
-{
-	//write(1, addr, size);
-	return (addr + size);
+	return (0);
 }
