@@ -1,33 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_strcat.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: idiaz-fo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/06 17:54:51 by idiaz-fo          #+#    #+#             */
-/*   Updated: 2021/03/09 18:16:23 by idiaz-fo         ###   ########.fr       */
+/*   Created: 2021/03/08 21:21:35 by idiaz-fo          #+#    #+#             */
+/*   Updated: 2021/03/09 11:54:00 by idiaz-fo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-unsigned int	ft_strlcpy(char *dest, char *src, unsigned int size)
+char *ft_strcat(char *dest, char *src)
 {
-	unsigned int i;
-	unsigned int srcsize;
+	int i;
+	int j;
 
 	i = 0;
-	srcsize = 0;
-	while (src[i] != 0)
-		i++;
-	srcsize = i;
-	i = 0;
-	if (size != 0)
+	j = 0;
+	while (i >= 0)
 	{
-		while (i < size)
-		{
-			dest[i] = i == size - 1 ? 0 : src[i];
+		if (dest[0] != 0)
 			i++;
+		else
+		{
+			dest[i] = src[j];
+			if (src[j] == 0)
+			{
+				dest[i] = src[j];
+				return (dest);
+			}
+			i++;
+			j++;
 		}
+
 	}
-	return (srcsize);
+	return (dest);
 }

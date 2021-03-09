@@ -6,7 +6,7 @@
 /*   By: idiaz-fo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/04 08:26:59 by idiaz-fo          #+#    #+#             */
-/*   Updated: 2021/03/08 19:48:09 by idiaz-fo         ###   ########.fr       */
+/*   Updated: 2021/03/09 19:31:20 by idiaz-fo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,6 @@ char			*ft_strcapitalize(char *str);
 unsigned int	ft_strlcpy(char *dest, char *src, unsigned int size);
 void			ft_putstr_non_printable(char *str);
 void			*ft_print_memory(void *addr, unsigned int size);
-void print_hex(long num);
 
 void	ejercicio00(void)
 {
@@ -44,15 +43,16 @@ void	ejercicio00(void)
 
 void	ejercicio01(void)
 {
-	char src[] = "Lleno de volantes y de cascabeles";
-	int len = 10;
-	char dest[sizeof(src) / sizeof(char)];
+	char src[] = "Holaa";
+	char dest[10] = {'0', '0', '0', '0', '0', '0', '0', '0', '0', '0'};
+	int len = sizeof(dest)/sizeof(char);
 
 	printf("La cadena de origen es:	'%s'\n", src);
 	printf("La cadena destino es::	'%s'\nVoy a copiar %d caracteres\n", dest, len);
 	printf("Ejecutando Funcion...\n");
 	ft_strncpy(dest, src, len);
 	printf("La cadena destino es::	'%s'\n", dest);
+	write(1, &dest, len);
 }
 
 void	ejercicio02(void)
@@ -155,7 +155,7 @@ void	ejercicio08(void)
 
 void	ejercicio09(void)
 {
-	char tabno[] = "salut, comment tu vas ? 42mots quarante-deux; cinquante+et+un";
+	char tabno[] = "salut, coMMent tu vas ? 42mots quarante-deux; cinquante+et+un";
 	char tabsi[] = "1df hola ABCC Ef-ad ropa -o-0:el cafe+es+bueno, y esta rico ? ";
 	char tabempty[] = "";
 
@@ -182,7 +182,8 @@ void	ejercicio10(void)
 
 void	ejercicio11(void)
 {
-	char src[] = "ESTA CAD'\n'ENA TI'\x1E' '\x1F'NE '\x17' '\x0F' 25 CHAR";
+	char src[] = "ESTA!()CAD'\n'E/&NA TI'\x1E',*+]-'\x7F'NE '\x17'-'\x0F' 25 CHAR";
+	
 
 	printf("La cadena 1 es:: '%s'\n", src); 
 	ft_putstr_non_printable(src);
@@ -191,13 +192,12 @@ void	ejercicio11(void)
 
 void	ejercicio12(void)
 {
-	char src[10];
-	print_hex(src);
-	/*char *str = "Salut les aminches c'est cool show mem on fait de truc terrible\1\2";
-	ft_print_memory(str, fstrlen(str));
-	ft_print_memory(str, 0);*/
+	char src[] = "aaaaa";
+	char *str = "Salut les aminches c'est cool show mem on fait de truc terrible\1\2";
 
-	ft_print_memory(src, 8);
+	ft_print_memory(src, sizeof(src));
+	write(1, &"\n", 1);
+	ft_print_memory(str, 40);
 }
 
 
