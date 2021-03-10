@@ -6,29 +6,32 @@
 /*   By: idiaz-fo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/08 09:51:39 by idiaz-fo          #+#    #+#             */
-/*   Updated: 2021/03/09 19:12:14 by idiaz-fo         ###   ########.fr       */
+/*   Updated: 2021/03/10 11:23:56 by idiaz-fo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void	printhex(long num)
+void	printhex(unsigned long num, int cont)
 {
 	char digit;
 	char *base;
 
 	base = "0123456789abcdef";
-
-	if ((num / 16) == 0)
+	if (cont != 0)
 	{
-		digit = base[num];
-		write(1, &digit, 1);
-	}
-	else
-	{
-		printhex(num / 16);
-		digit = base[num % 16];
-		write(1, &digit, 1);
+		if ((num / 16) == 0)
+		{
+			digit = base[num];
+			printhex(num / 16, --cont);
+			write(1, &digit, 1);
+		}
+		else
+		{
+			printhex(num / 16, --cont);
+			digit = base[num % 16];
+			write(1, &digit, 1);
+		}
 	}
 }
 
@@ -44,13 +47,7 @@ void	ft_putstr_non_printable(char *str)
 		else
 		{
 			write(1, &"\\", 1);
-			if (str[i] / 16 == 0)
-			{
-				write(1, &"0", 1);
-				printhex(str[i]);
-			}
-			else
-				printhex(str[i]);
+			printhex(str[i], 2);
 		}
 		i++;
 	}

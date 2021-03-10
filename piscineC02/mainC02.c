@@ -6,7 +6,7 @@
 /*   By: idiaz-fo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/04 08:26:59 by idiaz-fo          #+#    #+#             */
-/*   Updated: 2021/03/09 19:31:20 by idiaz-fo         ###   ########.fr       */
+/*   Updated: 2021/03/10 13:23:13 by idiaz-fo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -182,7 +182,7 @@ void	ejercicio10(void)
 
 void	ejercicio11(void)
 {
-	char src[] = "ESTA!()CAD'\n'E/&NA TI'\x1E',*+]-'\x7F'NE '\x17'-'\x0F' 25 CHAR";
+	char src[] = "Eªªºº\x80ÇSTA!()CAD'\n'E/&NA TI'\x1E',*+]-'\x7F'NE '\x17'-'\x0F' 25 CHAR";
 	
 
 	printf("La cadena 1 es:: '%s'\n", src); 
@@ -192,12 +192,12 @@ void	ejercicio11(void)
 
 void	ejercicio12(void)
 {
-	char src[] = "aaaaa";
-	char *str = "Salut les aminches c'est cool show mem on fait de truc terrible\1\2";
+	char src[] = "HOLA\n\\*MARVIN*\\, ªeste mensajeº [^09*`;:+] tiene {ª\x10\x7F\x0FÇº}FIN";
 
-	ft_print_memory(src, sizeof(src));
+	ft_print_memory(src, sizeof(src)/sizeof(char));
+	printf("Intento Imprimir con 0 size");
+	ft_print_memory(src, 0);
 	write(1, &"\n", 1);
-	ft_print_memory(str, 40);
 }
 
 
