@@ -6,7 +6,7 @@
 /*   By: idiaz-fo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/06 17:54:51 by idiaz-fo          #+#    #+#             */
-/*   Updated: 2021/03/09 18:16:23 by idiaz-fo         ###   ########.fr       */
+/*   Updated: 2021/03/10 19:37:08 by idiaz-fo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,12 @@ unsigned int	ft_strlcpy(char *dest, char *src, unsigned int size)
 	{
 		while (i < size)
 		{
-			dest[i] = i == size - 1 ? 0 : src[i];
+
+			if ( i == size -1)
+				dest[i] = '\0';
+			else
+				dest[i] = src[i];
+			//dest[i] = i == size - 1 ? 0 : src[i];
 			i++;
 		}
 	}

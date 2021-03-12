@@ -1,29 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcmp.c                                        :+:      :+:    :+:   */
+/*   ft_strstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: idiaz-fo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/08 19:57:40 by idiaz-fo          #+#    #+#             */
-/*   Updated: 2021/03/11 17:03:09 by idiaz-fo         ###   ########.fr       */
+/*   Created: 2021/03/11 09:09:22 by idiaz-fo          #+#    #+#             */
+/*   Updated: 2021/03/11 19:43:35 by idiaz-fo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_strcmp(char *s1, char *s2)
+char	*ft_strstr(char *str, char *to_find)
 {
 	int i;
+	int j;
 
 	i = 0;
-	while (!(s1[i] == 0 || s2[i] == 0))
+	if (to_find[0] == 0)
+		return (str);
+	while (str[i] != 0)
 	{
-		if (s1[i] != s2[i])
+		j  = 0;
+		while (str[i + j] == to_find[j])
 		{
-			return (s1[i] - s2[i]);
+			if (to_find[j + 1] == 0)
+				return (&str[i]);
+			j++;
 		}
 		i++;
 	}
-	if (s1[i] == 0 || s2[i] == 0)
-		return (s1[i] - s2[i]);
 	return (0);
+
 }

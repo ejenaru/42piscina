@@ -6,7 +6,7 @@
 /*   By: idiaz-fo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/08 19:49:34 by idiaz-fo          #+#    #+#             */
-/*   Updated: 2021/03/09 12:20:26 by idiaz-fo         ###   ########.fr       */
+/*   Updated: 2021/03/12 21:28:10 by idiaz-fo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,9 @@
 int ft_strcmp(char *s1, char *s2);
 int ft_strncmp(char *s1, char *s2, unsigned int n);
 char *ft_strcat(char *dest, char *src);
+char *ft_strncat(char *dest, char *src, unsigned int nb);
+char *ft_strstr(char *str, char *to_find);
+unsigned int ft_strlcat(char *dest, char *src, unsigned int size);
 
 void	ejercicio00(void)
 {
@@ -52,7 +55,7 @@ void	ejercicio02(void)
 	strcat (str,"strings ");
 	strcat (str,"are ");
 	strcat (str,"concatenated.");
-	char str2[80];
+	char str2[20];
 	strcpy (str2,"these ");
 	ft_strcat (str2,"strings ");
 	ft_strcat (str2,"are ");
@@ -60,6 +63,57 @@ void	ejercicio02(void)
 
 	printf("%s  original\n", str);
 	printf("%s  copia\n", str2);
+}
+
+void	ejercicio03(void)
+{
+	char str[80];
+	strcpy(str,"these ");
+	strncat(str,"strings ", 8);
+	strncat(str,"are ",1);
+	strncat(str,"concatenated.", 50);
+	char str2[80];
+	strcpy(str2,"these ");
+	ft_strncat(str2,"strings ", 8);
+	ft_strncat(str2,"are ", 1);
+	ft_strncat(str2,"concatenated.", 50);
+
+	printf("%s|original\n", str);
+	printf("%s|copia\n", str2);
+}
+
+void	ejercicio04(void)
+{
+	char str[] = "BaBa oo Bar Baz";
+	char str2[] = "BaBa oo Ba Baz";
+	char str3[] = "";
+	char find[] = "Bar";
+
+	printf("%s|str\n", str);
+	printf("%s|find\n", find);
+	printf("%s|original\n", strstr(str, find));
+	printf("%s|copia\n", ft_strstr(str, find));
+	printf("%s|original\n", strstr(str2, find));
+	printf("%s|copia\n", ft_strstr(str2, find));
+	printf("%s|original\n", strstr(str, str3));
+	printf("%s|copia\n", ft_strstr(str, str3));
+}
+
+void	ejercicio05(void)
+{
+	char str[40];
+	char str2[40];
+	strcpy(str,"these ");
+	strcpy(str2,"these ");
+	printf("%lu o\n",strlcat(str,"strings ", 8));
+	printf("%u c \n",ft_strlcat(str2,"strings ", 8));
+	printf("%lu o \n",strlcat(str,"are ",1));
+	printf("%u c \n",ft_strlcat(str2,"are ", 1));
+	printf("%lu o \n",strlcat(str,"concatenated.", 20));
+	printf("%u c \n",ft_strlcat(str2,"concatenated.", 20));
+
+	printf("%s|original\n", str);
+	printf("%s|copia\n", str2);
 }
 
 int		main()
@@ -72,28 +126,14 @@ int		main()
 	ejercicio00();
 	printf("\n-------EJERCICIO 01: ft_strncmp \n");
 	ejercicio01();
-	printf("\n-------EJERCICIO 02: ft_str_is_alpha\n");
+	printf("\n-------EJERCICIO 02: ft_strcat\n");
 	ejercicio02();
-	printf("\n-------EJERCICIO 03: ft_str_is_numeric\n");
-	//ejercicio03();
-	printf("\n-------EJERCICIO 04: ft_str_is_lowercase\n");
-	//ejercicio04();
-	printf("\n-------EJERCICIO 05: ft_str_is_uppercase\n");
-	//ejercicio05();
-	printf("\n-------EJERCICIO 06: ft_str_is_printable\n");
-	//ejercicio06();
-	printf("\n-------EJERCICIO 07: ft_strupcase\n");
-	//ejercicio07();
-	printf("\n-------EJERCICIO 08: ft_strlowercase\n");
-	//ejercicio08();
-	printf("\n-------EJERCICIO 09: ft_strcapitalize\n");
-	//ejercicio09();
-	printf("\n-------EJERCICIO 10: ft_strlcpy\n");
-	//ejercicio10();
-	printf("\n-------EJERCICIO 11: ft_putstr_non_printable\n");
-	//ejercicio11();
-	printf("\n-------EJERCICIO 12: ft_print_memory\n");
-	//ejercicio12();
+	printf("\n-------EJERCICIO 03: ft_strncat\n");
+	ejercicio03();
+	printf("\n-------EJERCICIO 04: ft_strstr\n");
+	ejercicio04();
+	printf("\n-------EJERCICIO 05: ft_strlcat\n");
+	ejercicio05();
 	printf("\nFin de la corrección\n");
 	return 0;
 }

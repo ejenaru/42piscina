@@ -6,13 +6,14 @@
 /*   By: idiaz-fo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/04 08:26:59 by idiaz-fo          #+#    #+#             */
-/*   Updated: 2021/03/10 13:23:13 by idiaz-fo         ###   ########.fr       */
+/*   Updated: 2021/03/11 09:50:58 by idiaz-fo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
 #include <stdio.h>
 #include <unistd.h>
+#include <string.h>
 
 void			*ft_strcpy(char *dest, char *src);
 char			*ft_strncpy(char *dest, char *src, unsigned int n);
@@ -170,23 +171,28 @@ void	ejercicio09(void)
 void	ejercicio10(void)
 {
 	char src[] = "ESTA CADENA TIENE 25 CHAR";
-	char dest[1];
+	char dest[40];
 
 	printf("La cadena 1 es:: '%s'\n", src); 
 	printf("La cadena 2 es:: '%s'\n", dest);
-	printf("SIZE SOURCE::  %d\n", ft_strlcpy(dest, src, sizeof(dest)/sizeof(char))); 
+	printf("SIZE SOURCE::  %lu\n", strlcpy(dest, src, sizeof(dest)/sizeof(char))); 
 	printf("La cadena 2 es:: '%s'\n", dest);
+	write(1, dest, sizeof(dest));
+	printf("\n");
 	printf("La cadena 1 es:: '%s'\n",src);
 	printf("\ndest: %lu, source: %lu\n", sizeof(dest), sizeof(src)/sizeof(char));
 }
 
 void	ejercicio11(void)
 {
-	char src[] = "Eªªºº\x80ÇSTA!()CAD'\n'E/&NA TI'\x1E',*+]-'\x7F'NE '\x17'-'\x0F' 25 CHAR";
-	
+	char src2[256];
+	int i;
 
-	printf("La cadena 1 es:: '%s'\n", src); 
-	ft_putstr_non_printable(src);
+	src2[255] = 0;
+	for(i = 1; i < 256; i++)
+		src2[i-1] = i;
+	printf("La cadena es:: '%s'\n", src2); 
+	ft_putstr_non_printable(src2);
 	printf("\n");
 }
 

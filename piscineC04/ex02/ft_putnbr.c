@@ -1,29 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcmp.c                                        :+:      :+:    :+:   */
+/*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: idiaz-fo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/08 19:57:40 by idiaz-fo          #+#    #+#             */
-/*   Updated: 2021/03/11 17:03:09 by idiaz-fo         ###   ########.fr       */
+/*   Created: 2021/03/11 17:37:41 by idiaz-fo          #+#    #+#             */
+/*   Updated: 2021/03/11 18:06:43 by idiaz-fo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_strcmp(char *s1, char *s2)
+void	ft_putnbr(int nb)
 {
-	int i;
+	char digit;
 
-	i = 0;
-	while (!(s1[i] == 0 || s2[i] == 0))
+	if (nb / 10 == 0)
 	{
-		if (s1[i] != s2[i])
-		{
-			return (s1[i] - s2[i]);
-		}
-		i++;
+		digit = nb + '0';
+		write(1, &digit, 1);
 	}
-	if (s1[i] == 0 || s2[i] == 0)
-		return (s1[i] - s2[i]);
-	return (0);
+	else
+	{
+		digit = (nb % 10) + '0';
+		ft_putnbr(nb / 10);
+		write(1, &digit, 1);
+	}
 }

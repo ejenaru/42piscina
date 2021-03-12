@@ -1,29 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcmp.c                                        :+:      :+:    :+:   */
+/*   ft_strncat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: idiaz-fo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/08 19:57:40 by idiaz-fo          #+#    #+#             */
-/*   Updated: 2021/03/11 17:03:09 by idiaz-fo         ###   ########.fr       */
+/*   Created: 2021/03/10 19:07:58 by idiaz-fo          #+#    #+#             */
+/*   Updated: 2021/03/11 17:04:08 by idiaz-fo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_strcmp(char *s1, char *s2)
+char	*ft_strncat(char *dest, char *src, unsigned int nb)
 {
-	int i;
+	unsigned int i;
+	unsigned int j;
 
 	i = 0;
-	while (!(s1[i] == 0 || s2[i] == 0))
-	{
-		if (s1[i] != s2[i])
-		{
-			return (s1[i] - s2[i]);
-		}
+	j = 0;
+	while (dest[i] != 0)
 		i++;
+	while (j < nb && src[j] != 0)
+	{
+		dest[i] = src[j];
+		i++;
+		j++;
 	}
-	if (s1[i] == 0 || s2[i] == 0)
-		return (s1[i] - s2[i]);
-	return (0);
+	dest[i] = 0;
+	return (dest);
 }
