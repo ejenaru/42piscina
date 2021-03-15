@@ -1,22 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   errors.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: idiaz-fo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/11 17:34:50 by idiaz-fo          #+#    #+#             */
-/*   Updated: 2021/03/13 12:05:32 by idiaz-fo         ###   ########.fr       */
+/*   Created: 2021/03/14 14:53:25 by idiaz-fo          #+#    #+#             */
+/*   Updated: 2021/03/14 15:38:14 by idiaz-fo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#ifndef ERRORS_H
+# define ERRORS_H
 
-void	ft_putstr(char *str)
-{
-	int i;
+void	ft_error(int i);
+int		check_if_num(char *str, int *len);
+int		check_if_longer(char *str, int len);
+int		find_num(char *num_init);
+int		ft_atoi(char *str, unsigned int *num);
 
-	i = 0;
-	while (str[i] != 0)
-		write(1, &str[i++], 1);
-}
+#endif

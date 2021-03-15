@@ -6,7 +6,7 @@
 /*   By: idiaz-fo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/08 19:49:34 by idiaz-fo          #+#    #+#             */
-/*   Updated: 2021/03/12 21:28:10 by idiaz-fo         ###   ########.fr       */
+/*   Updated: 2021/03/13 11:49:17 by idiaz-fo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -107,8 +107,8 @@ void	ejercicio05(void)
 	strcpy(str2,"these ");
 	printf("%lu o\n",strlcat(str,"strings ", 8));
 	printf("%u c \n",ft_strlcat(str2,"strings ", 8));
-	printf("%lu o \n",strlcat(str,"are ",1));
-	printf("%u c \n",ft_strlcat(str2,"are ", 1));
+	printf("%lu o \n",strlcat(str,"are ",0));
+	printf("%u c \n",ft_strlcat(str2,"are ", 0));
 	printf("%lu o \n",strlcat(str,"concatenated.", 20));
 	printf("%u c \n",ft_strlcat(str2,"concatenated.", 20));
 
