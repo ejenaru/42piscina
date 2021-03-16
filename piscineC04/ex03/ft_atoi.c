@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: idiaz-fo <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: idiaz-fo <idiaz-fo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/11 18:07:40 by idiaz-fo          #+#    #+#             */
-/*   Updated: 2021/03/13 16:02:35 by idiaz-fo         ###   ########.fr       */
+/*   Updated: 2021/03/16 13:20:53 by idiaz-fo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_pow(int num, unsigned int pow)
+int		ft_pow(int num, unsigned int pow)
 {
 	unsigned int i;
 
@@ -25,7 +25,7 @@ int	ft_pow(int num, unsigned int pow)
 	return (num);
 }
 
-int	find_num(char *num_init)
+int		find_num(char *num_init)
 {
 	int num;
 	int i;
@@ -37,22 +37,16 @@ int	find_num(char *num_init)
 		num = num * 10 + (*num_init - '0');
 		num_init++;
 	}
-	/*num_init--;
-	while (*num_init >= '0' && *num_init <= '9')
-	{
-		num += ((num_init[i] - '0') * ft_pow(10, i));
-		num_init--;
-		i++;	
-	}*/
 	return (num);
 }
 
-int ft_atoi(char *str)
+int		ft_atoi(char *str)
 {
 	int sign;
 	int num;
 	int i;
 
+	num = 0;
 	i = 0;
 	sign = 1;
 	while (str[i] == ' ' || (str[i] >= 9 && str[i] <= 13))
@@ -63,9 +57,12 @@ int ft_atoi(char *str)
 			sign *= -1;
 		i++;
 	}
-	if (str[i] > '0' && str[i] < '9')
-		num = find_num(&str[i]);
-	else
+	if (!(str[i] >= '0' && str[i] <= '9'))
 		return (0);
-	return  (num * sign);
+	while (str[i] >= '0' && str[i] <= '9')
+	{
+		num = num * 10 + (str[i] - '0');
+		i++;
+	}
+	return (num * sign);
 }

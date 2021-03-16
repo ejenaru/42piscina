@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putnbr_base.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: idiaz-fo <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: idiaz-fo <idiaz-fo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/13 16:11:09 by idiaz-fo          #+#    #+#             */
-/*   Updated: 2021/03/13 16:31:14 by idiaz-fo         ###   ########.fr       */
+/*   Updated: 2021/03/16 13:40:04 by idiaz-fo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-int	str_len(char *str)
+int		str_len(char *str)
 {
 	int i;
 
@@ -22,20 +22,49 @@ int	str_len(char *str)
 	return (i);
 }
 
-void ft_putnbr_base(int nbr, char *base)
+void	ft_putnbr_base(int nbr, char *base)
+{
+	int			basenum;
+	long int	nbrc;
+
+	nbrc = nbr;
+	basenum = str_len(base);
+	if (nbrc < 0)
+	{
+		write(1, "-", 1);
+		ft_putnbr_base(-(nbrc / basenum), base);
+		write(1, &base[-(nbrc % basenum)], 1);
+	}
+	else
+	{
+		if ((nbrc / basenum) == 0)
+			write(1, &base[nbrc], 1);
+		else
+		{
+			ft_putnbr_base(nbrc / basenum, base);
+			write(1, &base[nbrc % basenum], 1);
+		}
+	}
+}
+
+/*void	ft_putnbr_base(int nbr, char *base)
 {
 	int basenum;
 	char digit;
+	long int num;
 
+	num = nbr;
 	basenum = str_len(base);
 	if (nbr == -2147483648)
 	{
-		ft_putnbr_base(nbr / basenum, base);
-		write(1, &"8", 1);
+		digit = base[-(nbr % basenum)];
+		nbr = nbr / basenum;
+		ft_putnbr_base(nbr, base);
+		write(1, &digit, 1);
 	}
-	if (nbr < 0)
+	else if (nbr < 0)
 	{
-		write(1, &"-", 1);
+		write(1, "-", 1);
 		ft_putnbr_base(-nbr, base);
 	}
 	else
@@ -52,4 +81,4 @@ void ft_putnbr_base(int nbr, char *base)
 			write(1, &digit, 1);
 		}
 	}
-}
+}*/

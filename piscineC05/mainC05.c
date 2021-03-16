@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   mainC04.c                                          :+:      :+:    :+:   */
+/*   mainC05.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: idiaz-fo <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: idiaz-fo <idiaz-fo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/11 17:28:13 by idiaz-fo          #+#    #+#             */
-/*   Updated: 2021/03/15 16:45:26 by idiaz-fo         ###   ########.fr       */
+/*   Created: 2021/03/16 13:34:15 by idiaz-fo          #+#    #+#             */
+/*   Updated: 2021/03/16 13:34:17 by idiaz-fo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,42 +23,6 @@ void ft_putnbr_base(int nbr, char *base);
 void	ejercicio00()
 {
 	printf("%d", ft_strlen("hola buenas tardes"));
-}
-
-void	ejercicio01()
-{
-	ft_putstr("Hola buenas tardes");
-}
-
-void	ejercicio02()
-{
-	ft_putnbr(42);
-}
-
-void	ejercicio03()
-{
-	printf("%d COPIA\n", ft_atoi("  -100"));
-	printf("%d ORIGINAL\n", atoi("  -100"));
-	printf("%d COPIA\n", ft_atoi("  0"));
-	printf("%d ORIGINAL\n", atoi("  0"));
-	printf("%d COPIA\n", ft_atoi("  -----+-+-122asd"));
-	printf("%d ORIGINAL\n", atoi("  -122asda"));
-	printf("%d COPIA\n", ft_atoi("  -e100"));
-	printf("%d ORIGINAL\n", atoi("  -e10a0"));
-	
-}
-
-void	ejercicio04()
-{
-	ft_putnbr_base(-2147483648, "ponys");
-	printf(":  Base: ponys\n");
-	ft_putnbr_base(0, "01");
-	printf(":  Base: 01\n");
-	ft_putnbr_base(16, "0123456789abcdef");
-	printf(":  Base: hexadecimal\n");
-	ft_putnbr_base(-10, "ABCDE");
-	printf(":  Base: ABCDE\n");
-
 }
 
 int		main()
