@@ -1,47 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*   ft_is_prime.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: idiaz-fo <idiaz-fo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/11 17:37:41 by idiaz-fo          #+#    #+#             */
-/*   Updated: 2021/03/17 10:58:37 by idiaz-fo         ###   ########.fr       */
+/*   Created: 2021/03/17 13:52:56 by idiaz-fo          #+#    #+#             */
+/*   Updated: 2021/03/17 16:31:49 by idiaz-fo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-
-void	fputchar(char c)
+int	ft_is_prime(int nb)
 {
-	write(1, &c, 1);
-}
+	int i;
 
-void	ft_putnbr(int num)
-{
-	char digit;
-
-	if (num == -2147483648)
-	{
-		ft_putnbr(num / 10);
-		fputchar('8');
-	}
+	if (nb == 0 || nb == 1)
+		return (0);
+	else if (nb < 0)
+		return (0);
 	else
 	{
-		if (num < 0)
+		i = 2;
+		while (i <= nb / 2)
 		{
-			fputchar('-');
-			num = -num;
+			if (nb % i == 0)
+				return (0);
+			i = i % 2 == 0 ? i + 1 : i + 2;
 		}
-		if (num > 9)
-		{
-			ft_putnbr(num / 10);
-			fputchar((num % 10) + '0');
-		}
-		else
-		{
-			digit = ((num % 10) + '0');
-			fputchar(digit);
-		}
+		return (1);
 	}
 }

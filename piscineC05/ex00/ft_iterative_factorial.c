@@ -1,47 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*   ft_iterative_factorial.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: idiaz-fo <idiaz-fo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/11 17:37:41 by idiaz-fo          #+#    #+#             */
-/*   Updated: 2021/03/17 10:58:37 by idiaz-fo         ###   ########.fr       */
+/*   Created: 2021/03/17 11:23:13 by idiaz-fo          #+#    #+#             */
+/*   Updated: 2021/03/17 12:36:28 by idiaz-fo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-
-void	fputchar(char c)
+int		ft_iterative_factorial(int nb)
 {
-	write(1, &c, 1);
-}
+	int num;
+	int i;
 
-void	ft_putnbr(int num)
-{
-	char digit;
-
-	if (num == -2147483648)
+	i = 0;
+	num = 1;
+	if (nb == 0)
+		return (1);
+	else if (nb < 0)
+		return (0);
+	while (i < nb)
 	{
-		ft_putnbr(num / 10);
-		fputchar('8');
+		num = num * (i + 1);
+		i++;
 	}
-	else
-	{
-		if (num < 0)
-		{
-			fputchar('-');
-			num = -num;
-		}
-		if (num > 9)
-		{
-			ft_putnbr(num / 10);
-			fputchar((num % 10) + '0');
-		}
-		else
-		{
-			digit = ((num % 10) + '0');
-			fputchar(digit);
-		}
-	}
+	return (num);
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   mainC04.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: idiaz-fo <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: idiaz-fo <idiaz-fo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/11 17:28:13 by idiaz-fo          #+#    #+#             */
-/*   Updated: 2021/03/15 16:45:26 by idiaz-fo         ###   ########.fr       */
+/*   Updated: 2021/03/17 11:17:10 by idiaz-fo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,9 @@ void	ejercicio01()
 void	ejercicio02()
 {
 	ft_putnbr(42);
+	ft_putnbr(-2147483648);
+	ft_putnbr(0);
+	ft_putnbr(2147483647);
 }
 
 void	ejercicio03()
@@ -51,14 +54,21 @@ void	ejercicio03()
 void	ejercicio04()
 {
 	ft_putnbr_base(-2147483648, "ponys");
-	printf(":  Base: ponys\n");
-	ft_putnbr_base(0, "01");
-	printf(":  Base: 01\n");
+	printf(":  -2147483648 Base: ponys\n");
+	ft_putnbr_base(10, "01");
+	printf(":  10 Base: 01\n");
 	ft_putnbr_base(16, "0123456789abcdef");
-	printf(":  Base: hexadecimal\n");
+	printf(":  16 Base: hexadecimal\n");
 	ft_putnbr_base(-10, "ABCDE");
-	printf(":  Base: ABCDE\n");
-
+	printf(":  -10 Base: ABCDE\n");
+	ft_putnbr_base(-10, "");
+	printf(":  -10 Base: (vacia)\n");
+	ft_putnbr_base(-10, "a");
+	printf(":  -10 Base: (a)\n");
+	ft_putnbr_base(-10, "aa456");
+	printf(":  -10 Base: aa456 (repetido)\n");
+	ft_putnbr_base(-10, "asdf-+");
+	printf(":  -10 Base: asdf-+\n");
 }
 
 int		main()
