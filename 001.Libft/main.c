@@ -6,12 +6,15 @@
 /*   By: idiaz-fo <idiaz-fo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/07 12:03:47 by idiaz-fo          #+#    #+#             */
-/*   Updated: 2021/04/07 12:12:13 by idiaz-fo         ###   ########.fr       */
+/*   Updated: 2021/04/07 23:16:06 by idiaz-fo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "ft_libft.h"
+
 int	main(void)
 {
+	printf("Hello world!\n");
 	
 	return (0);
 }

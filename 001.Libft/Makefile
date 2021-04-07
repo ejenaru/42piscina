@@ -6,7 +6,7 @@
 #    By: idiaz-fo <idiaz-fo@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/04/07 11:06:58 by idiaz-fo          #+#    #+#              #
-#    Updated: 2021/04/07 14:04:56 by idiaz-fo         ###   ########.fr        #
+#    Updated: 2021/04/07 23:27:57 by idiaz-fo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -37,4 +37,4 @@ fclean:
 	
 re: fclean all
 
-.PHONY: clean fclean all
+.PHONY: clean fclean re all #se pone aqui todos los target que NO tienen un archivo de salida que se llame igual que el target
