@@ -1,0 +1,47 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: idiaz-fo <idiaz-fo@student.42.fr>          +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2021/04/07 11:06:58 by idiaz-fo          #+#    #+#              #
+#    Updated: 2021/04/09 16:50:03 by idiaz-fo         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
+CC = gcc
+
+FLAGS = -Wall -Wextra -Werror
+
+NAME = libft.a
+
+MAIN = main.c
+
+DIR = ./src/
+
+SRCS = ft_atoi.c 
+
+OBJ = $(SRC:.c=.o) #los objetos que necesito para compilar el main son los .c pero con .o
+
+HEADER = libft.h #la librería propiamente dicha
+
+all: $(NAME)
+
+$(NAME): $(MAIN) $(OBJ)#crea el objeto libft.a compilando el header y los objetos
+	$(CC) $(FLAGS) -o $(NAME) -I $(HEADER) $(MAIN) $(OBJ)
+	ar rcs
+	ranlib
+
+clean:
+	rm -rf $(OBJ)
+
+fclean:
+	rm -rf $(NAME)
+	
+re: fclean all
+
+main:
+	$(CC) $(FLAGS) $(MAIN) $(DIR)$(SRCS) && ./a.out
+
+.PHONY: clean fclean all main

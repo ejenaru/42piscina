@@ -6,7 +6,31 @@
 /*   By: idiaz-fo <idiaz-fo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/07 11:54:06 by idiaz-fo          #+#    #+#             */
-/*   Updated: 2021/04/07 11:54:07 by idiaz-fo         ###   ########.fr       */
+/*   Updated: 2021/04/09 16:21:50 by idiaz-fo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+int	ft_atoi(const char *str)
+{
+	long	num;
+	int		i;
+	int		sign;
+
+	sign = 1;
+	num = 0;
+	i = 0;
+	while (str[i] == ' ' || (str[i] >= 9 && str[i] <= 13))
+		i++;
+	if (str[i] == '+' || str[i] == '-')
+	{
+		if (str[i] == '-')
+			sign *= -1;
+		i++;
+	}
+	while (str[i] >= '0' && str[i] <= '9')
+	{
+		num = (num * 10) + (str[i] - '0');
+		i++;
+	}
+	return (num * sign);
+}
