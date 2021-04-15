@@ -1,18 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_libft.h                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: idiaz-fo <idiaz-fo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/04/09 17:24:09 by idiaz-fo          #+#    #+#             */
-/*   Updated: 2021/04/09 17:36:39 by idiaz-fo         ###   ########.fr       */
+/*   Created: 2021/04/09 17:53:13 by idiaz-fo          #+#    #+#             */
+/*   Updated: 2021/04/09 17:53:16 by idiaz-fo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#ifndef FT_LIBFT_H
+# define FT_LIBFT_H
+# include <stdio.h>
+# include <unistd.h>
+# include <stdlib.h>
+# include <string.h>
+#include <stdio.h>
 
-size_t	ft_strlen(const char*s)
-{
-	return(0);
-}
+int		ft_atoi(char *str);
+size_t strlen(const char *s);
+
+#endif
