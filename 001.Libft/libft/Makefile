@@ -6,7 +6,7 @@
 #    By: idiaz-fo <idiaz-fo@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/04/07 11:06:58 by idiaz-fo          #+#    #+#              #
-#    Updated: 2021/04/15 13:54:54 by idiaz-fo         ###   ########.fr        #
+#    Updated: 2021/05/26 21:17:33 by idiaz-fo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,8 @@ SRCFOLDER = ./src/
 NAME = libft.a
 
 SRCS = 	ft_atoi.c \
-		ft_strlen.c
+		ft_strlen.c \
+		ft_strlcpy.c
 
 OBJ = $(SRCS:.c=.o) #los objetos que necesito para crear se llaman como los .c pero con .o
 
