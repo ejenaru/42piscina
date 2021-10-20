@@ -10,24 +10,25 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
-{
-	unsigned int i;
-	unsigned int j;
-	unsigned int srcsize;
+# include <ctype.h>
+# include <stdio.h>
+# include <unistd.h>
 
-	i = 0;
-	j = 0;
-	while (src[i] != 0)
-		i++;
-	srcsize = i;
-	if (size == 0)
+size_t	ft_strlcat(char *dest, const char *src, size_t size)
+{
+	size_t i;
+	size_t j;
+	size_t srcsize;
+
+	srcsize = ft_strlen(src); //cuento src
+	if (size == 0) //si no quiero copiar nada, me voy
 		return (srcsize);
 	i = 0;
-	while (dest[i] != 0)
+	while (dest[i] != 0) //me posiciono al final de dest
 		i++;
-	if (size <= i) // si ya está completo, devuelvo lo que he intentado crear pero eres imbecil
-		return (srcsize + size);
+	if (size <= i) // size es  el TOTAL, si el total de lo que quiero crear es mas pequeño que lo que YA TENGO
+		return (srcsize + size); //esto es lo que me hace falta para haberla creado
+	j = 0;
 	while (j < (size - i - 1) && src[j] != 0 )
 	{
 		dest[i + j] = src[j];
